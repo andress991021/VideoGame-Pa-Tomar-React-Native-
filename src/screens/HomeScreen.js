@@ -16,7 +16,7 @@ export default function HomeScreen(props) {
     <View style={styles.containercss}>
       <View style={styles.tarjetcss}>   
         <View style={{marginTop:24}}>
-            <TextTitle texttitle="Disclaimerss" /> 
+            <TextTitle texttitle="Disclaimer" /> 
         </View>
         <View style={{marginTop:13,marginHorizontal:20}}>
             <TextParragraf textparragraf="Please party responsibly. Never do something to put yourself or anyone in danger. Have fun!"/>
