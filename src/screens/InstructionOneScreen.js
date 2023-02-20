@@ -5,6 +5,7 @@ import TextTitle from '../components/Title'
 import ButtomGreen from '../components/Buttoms'
 import TextParragraf from '../components/Parragraf';
 import ImageInstruction from '../components/Images';
+import TextNotes from '../components/TextNotes';
 
 
 export default function InstructionOneScreen(props) {

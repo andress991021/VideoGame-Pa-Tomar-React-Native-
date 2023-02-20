@@ -5,6 +5,7 @@ import TextTitle from '../components/Title'
 import ButtomGreen from '../components/Buttoms'
 import TextParragraf from '../components/Parragraf';
 import OptionButtom from '../components/OptionsButtom';
+import TextNotes from '../components/TextNotes';
 
 import ImageInstruction from '../components/Images';
 

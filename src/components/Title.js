@@ -1,7 +1,12 @@
+
+
 import { Text, StyleSheet } from 'react-native';
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { func } from 'prop-types';
 import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen'
+import { useEffect, useCallback } from 'react';
+
 
 export default function TextTitle(props) {
 
@@ -11,6 +16,7 @@ export default function TextTitle(props) {
         RobotoCondensed: require("../assets/fonts/RobotoCondensed-Regular.ttf"),
         RobotoSlab: require("../assets/fonts/RobotoSlab-Regular.ttf")
     })
+
 
 
     const { texttitle } = props;
@@ -30,7 +36,7 @@ TextTitle.propTypes = {
 const styles = StyleSheet.create({
     texttitlecss: {
         fontFamily: 'RobotoSlab',
-        fontSize: 36.08,
+        fontSize: 35,
         fontWeight: '600',
         lineHeight: 47.58,
         textAlign: 'center',

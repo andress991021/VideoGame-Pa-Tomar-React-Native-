@@ -2,10 +2,14 @@ import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 import PropTypes from 'prop-types';
 import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen'
+import { useEffect, useCallback } from 'react';
+
 
 export default function TextParragraf(props) {
 
 
+  /*---------------------------Fonts----------------------------- */
   const [fontLoaded] = useFonts({
 
     RobotoRegular: require("../assets/fonts/Roboto-Regular.ttf"),
@@ -13,7 +17,21 @@ export default function TextParragraf(props) {
     RobotoSlab: require("../assets/fonts/RobotoSlab-Regular.ttf")
   })
 
+  useEffect(() => {
 
+    async function prepare() {
+      await SplashScreen.preventAutoHideAsync();
+    }
+    prepare();
+  }, [])
+
+  const onLayout = useCallback(async () => {
+    if (fontLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontLoaded])
+
+  /*-------------------------------------------------------------- */
 
   const { textparragraf } = props
   return (
@@ -29,9 +47,9 @@ TextParragraf.propTypes = {
 const styles = StyleSheet.create({
   textparragrafcss: {
     fontFamily: 'RobotoCondensed',
-    fontSize: 15,
-    fontWeight: '500',
-    lineHeight: 22.55,
+    fontSize: 12,
+
+
     textAlign: 'center',
     color: 'white'
   }

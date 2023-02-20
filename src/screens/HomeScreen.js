@@ -4,8 +4,10 @@ import React from 'react'
 import TextTitle from '../components/Title'
 import ButtomGreen from '../components/Buttoms'
 import TextParragraf from '../components/Parragraf';
-
-import { Roboto_400Regular } from '@expo-google-fonts/roboto'
+import TextNotes from '../components/TextNotes';
+import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen'
+import { useEffect, useCallback } from 'react';
 
 
 
@@ -17,22 +19,46 @@ export default function HomeScreen(props) {
     navigation.navigate(routename)
   }
 
+  /*---------------------------Fonts----------------------------- */
+  const [fontLoaded] = useFonts({
+
+    RobotoRegular: require("../assets/fonts/Roboto-Regular.ttf"),
+    RobotoCondensed: require("../assets/fonts/RobotoCondensed-Regular.ttf"),
+    RobotoSlab: require("../assets/fonts/RobotoSlab-Regular.ttf")
+  })
+
+  useEffect(() => {
+
+    async function prepare() {
+      await SplashScreen.preventAutoHideAsync();
+    }
+    prepare();
+  }, [])
+
+  const onLayout = useCallback(async () => {
+    if (fontLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontLoaded])
+
+  /*-------------------------------------------------------------- */
 
   return (
-    <View style={styles.containercss}>
+    <View style={styles.containercss} onLayout={onLayout}>
       <View style={styles.tarjetcss}>
-        <View style={{ marginTop: 24 }}>
+        <View style={{ marginTop: 24 }} >
           <TextTitle texttitle="Disclaimer" />
+          <TextNotes textnotes='holaaaaaaa'></TextNotes>
 
         </View>
-        <View style={{ marginTop: 13, marginHorizontal: 20 }}>
+        <View style={{ marginTop: 13, marginHorizontal: 5 }}>
           <TextParragraf textparragraf="Please party responsibly. Never do something to put yourself or anyone in danger. Have fun!" />
         </View>
         <View style={{ marginTop: 40, marginBottom: 20 }}>
           <ButtomGreen titlename="Next" linkdirection={() => goToPage("InstruccionOneScreen")} />
         </View>
       </View>
-    </View>
+    </View >
   )
 }
 //<ButtomGreen titlename="Ok" linkdirection={goToPage}/> 
@@ -45,7 +71,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   tarjetcss: {
-    fontFamily: 'Roboto_400Regular',
+
     backgroundColor: '#222525',
     paddingHorizontal: 39,
     borderRadius: 8

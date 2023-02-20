@@ -4,6 +4,7 @@ import React from 'react'
 import TextTitle from '../components/Title'
 import ButtomGreen from '../components/Buttoms'
 import TextParragraf from '../components/Parragraf';
+import TextNotes from '../components/TextNotes';
 
 /*
 export default function  InstruccionTwoScreen(props) {
