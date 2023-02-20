@@ -1,50 +1,50 @@
-import {Button,StyleSheet,Text, TouchableOpacity} from 'react-native';
+import { Button, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
 
 export default function ButtomGreen(props) {
-    const {titlename,linkdirection}=props
+  const { titlename, linkdirection } = props
   return (
 
     //<Button   title={titlename} onPress={linkdirection}/>
-  
-    <TouchableOpacity 
-      style= {{
+
+    <TouchableOpacity
+      style={{
         ...styles.buttoncss,
-        backgroundColor:'#00D763'
-      }}  
+        backgroundColor: '#00D763'
+      }}
       onPress={linkdirection}>
 
-        <Text style={{
-          ...styles.buttontextcss,
-          color:'white'
-          }}>
-          {titlename}
-        </Text>
+      <Text style={{
+        ...styles.buttontextcss,
+        color: 'white'
+      }}>
+        {titlename}
+      </Text>
 
-    </TouchableOpacity>  
+    </TouchableOpacity>
   )
 }
 
 
-ButtomGreen.propTypes={
-    titlename: PropTypes.string.isRequired//Component Required in string
+ButtomGreen.propTypes = {
+  titlename: PropTypes.string.isRequired//Component Required in string
 };
 
 
 const styles = StyleSheet.create({
-  buttoncss:{
-    alignSelf:'center',
-    borderRadius:100,
-    paddingVertical:12,
-    width:237
+  buttoncss: {
+    alignSelf: 'center',
+    borderRadius: 100,
+    paddingVertical: 12,
+    width: 237
   },
 
-  buttontextcss:{
-    alignSelf:'center',
-    fontWeight:'600',
-    fontSize:16,
-    lineHeight:19
-    
+  buttontextcss: {
+    alignSelf: 'center',
+    fontWeight: '600',
+    fontSize: 16,
+    lineHeight: 19
+
   }
 });
