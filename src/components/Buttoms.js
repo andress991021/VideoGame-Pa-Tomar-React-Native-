@@ -1,13 +1,18 @@
 import { Button, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useFonts } from 'expo-font';
 
 export default function ButtomGreen(props) {
   const { titlename, linkdirection } = props
+
+  const [fontLoaded] = useFonts({
+    RobotoRegular: require("../assets/fonts/Roboto-Regular.ttf"),
+    RobotoCondensed: require("../assets/fonts/RobotoCondensed-Regular.ttf"),
+    RobotoSlab: require("../assets/fonts/RobotoSlab-Regular.ttf")
+  })
+  
   return (
-
-    //<Button   title={titlename} onPress={linkdirection}/>
-
     <TouchableOpacity
       style={{
         ...styles.buttoncss,
@@ -21,7 +26,6 @@ export default function ButtomGreen(props) {
       }}>
         {titlename}
       </Text>
-
     </TouchableOpacity>
   )
 }
@@ -42,6 +46,7 @@ const styles = StyleSheet.create({
 
   buttontextcss: {
     alignSelf: 'center',
+    fontFamily: 'RobotoRegular',
     fontWeight: '600',
     fontSize: 16,
     lineHeight: 19

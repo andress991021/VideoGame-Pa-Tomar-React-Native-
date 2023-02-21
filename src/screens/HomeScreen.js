@@ -5,10 +5,6 @@ import TextTitle from '../components/Title'
 import ButtomGreen from '../components/Buttoms'
 import TextParragraf from '../components/Parragraf';
 
-import { Roboto_400Regular } from '@expo-google-fonts/roboto'
-
-
-
 
 export default function HomeScreen(props) {
 
@@ -16,7 +12,6 @@ export default function HomeScreen(props) {
   const goToPage = (routename) => {
     navigation.navigate(routename)
   }
-
 
   return (
     <View style={styles.containercss}>
@@ -35,7 +30,7 @@ export default function HomeScreen(props) {
     </View>
   )
 }
-//<ButtomGreen titlename="Ok" linkdirection={goToPage}/> 
+
 
 const styles = StyleSheet.create({
   containercss: {
@@ -45,7 +40,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   tarjetcss: {
-    fontFamily: 'Roboto_400Regular',
     backgroundColor: '#222525',
     paddingHorizontal: 39,
     borderRadius: 8

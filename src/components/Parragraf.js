@@ -13,8 +13,6 @@ export default function TextParragraf(props) {
     RobotoSlab: require("../assets/fonts/RobotoSlab-Regular.ttf")
   })
 
-
-
   const { textparragraf } = props
   return (
     <Text style={styles.textparragrafcss}>{textparragraf}</Text>
@@ -28,8 +26,8 @@ TextParragraf.propTypes = {
 
 const styles = StyleSheet.create({
   textparragrafcss: {
-    fontFamily: 'RobotoCondensed',
-    fontSize: 15,
+    fontFamily: 'RobotoRegular',
+    fontSize: 19.24,
     fontWeight: '500',
     lineHeight: 22.55,
     textAlign: 'center',
