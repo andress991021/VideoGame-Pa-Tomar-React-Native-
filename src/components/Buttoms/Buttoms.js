@@ -3,15 +3,26 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useFonts } from 'expo-font';
 
+
 export default function ButtomGreen(props) {
-  const { titlename, linkdirection } = props
+
+
+
+
+  /*---------------------------Fonts----------------------------- */
 
   const [fontLoaded] = useFonts({
-    RobotoRegular: require("../assets/fonts/Roboto-Regular.ttf"),
-    RobotoCondensed: require("../assets/fonts/RobotoCondensed-Regular.ttf"),
-    RobotoSlab: require("../assets/fonts/RobotoSlab-Regular.ttf")
+
+    RobotoRegular: require("../../assets/fonts/Roboto-Regular.ttf"),
+    RobotoCondensed: require("../../assets/fonts/RobotoCondensed-Regular.ttf"),
+    RobotoSlab: require("../../assets/fonts/RobotoSlab-Regular.ttf")
   })
-  
+
+  /*-------------------------------------------------------------- */
+
+
+  const { titlename, linkdirection } = props
+
   return (
     <TouchableOpacity
       style={{

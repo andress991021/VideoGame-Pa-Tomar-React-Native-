@@ -6,6 +6,9 @@ export default function OptionButtom(props) {
     const { titlename, linkdirection } = props
     return (
 
+
+        
+
         //<Button   title={titlename} onPress={linkdirection}/>
 
         <TouchableOpacity

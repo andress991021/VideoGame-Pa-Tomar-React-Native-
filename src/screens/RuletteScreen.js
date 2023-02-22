@@ -2,9 +2,9 @@ import { Text, View, StyleSheet } from 'react-native'
 import React from 'react'
 //Components create for the proyect.
 import TextTitle from '../components/Title'
-import ButtomGreen from '../components/Buttoms'
-import TextParragraf from '../components/Parragraf';
-import OptionButtom from '../components/OptionsButtom';
+
+import TextParragraf from '../components/Text/Parragraf';
+import OptionButtom from '../components/Buttoms/OptionsButtom';
 
 import ImageInstruction from '../components/Images';
 

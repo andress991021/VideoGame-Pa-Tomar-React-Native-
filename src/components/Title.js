@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useFonts } from 'expo-font';
 
+
 export default function TextTitle(props) {
 
     const [fontLoaded] = useFonts({
@@ -11,6 +12,8 @@ export default function TextTitle(props) {
         RobotoCondensed: require("../assets/fonts/RobotoCondensed-Regular.ttf"),
         RobotoSlab: require("../assets/fonts/RobotoSlab-Regular.ttf")
     })
+
+
 
 
     const { texttitle } = props;
