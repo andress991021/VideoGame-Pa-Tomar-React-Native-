@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet } from 'react-native'
+import { Text, View, StyleSheet, Modal } from 'react-native'
 import React from 'react'
 
 //Components create for the proyect.
@@ -9,6 +9,7 @@ import OptionButtom from '../components/Buttoms/OptionsButtom';
 //Styles
 
 import RuletteStyles from '../assets/Styles/RuletteStyles.js';
+import { useState } from "react";
 
 
 
@@ -19,6 +20,8 @@ export default function RuletteScreen(props) {
     const goToPage = (routename) => {
         navigation.navigate(routename)
     }
+
+    const [view, setView] = useState(false);
 
 
     return (
@@ -31,7 +34,52 @@ export default function RuletteScreen(props) {
                 </View>
 
                 <View style={{ justifyContent: 'flex-end', }}>
-                    <OptionButtom titlename="X" linkdirection={() => goToPage("InstruccionOneScreen")} />
+
+                    <OptionButtom titlename="+" action={() => {
+
+                        setView(true);
+
+                    }} />
+
+                    <Modal animationType="fade"
+                        onDimiss={() => console.log('close')}
+                        onShow={() => console.log('show')}
+                        transparent
+                        visible={view}
+                    >
+
+                        <View
+                            style={{
+                                flex: 1,
+                                backgroundColor: 'rgba(1,1,1,0.5)',
+                                justifyContent: 'flex-start',
+                                alignItems: 'flex-end',
+
+                            }}
+                        >
+
+                            <View
+                                style={{
+
+                                    height: '40%',
+                                    width: '30%',
+                                    backgroundColor: 'white',
+                                    borderRadius: 20,
+                                    margin: 15,
+
+                                }}
+                            >
+
+                                <OptionButtom titlename="Languaje" linkdirection={() => goToPage("InstruccionOneScreen")} />
+                                <OptionButtom titlename="How to" linkdirection={() => goToPage("InstruccionOneScreen")} />
+                                <OptionButtom titlename="Close" action={() => { setView(false); }} />
+
+
+
+                            </View>
+                        </View>
+
+                    </Modal>
                 </View>
 
             </View>
