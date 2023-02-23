@@ -17,7 +17,7 @@ export default function HomeScreen(props) {
     <View style={styles.containercss}>
       <View style={styles.tarjetcss}>
         <View style={{ marginTop: 24 }}>
-          <TextTitle texttitle="Disclaimerssss" />
+          <TextTitle texttitle="Disclaimer" />
 
         </View>
         <View style={{ marginTop: 13, marginHorizontal: 20 }}>
