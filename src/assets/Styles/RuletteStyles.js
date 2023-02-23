@@ -11,7 +11,8 @@ const RuletteStyles = StyleSheet.create({
         width: '100%',
 
         flexDirection: 'row',
-
+        justifyContent: 'space-between',
+        padding: 15,
     },
     logo: {
         backgroundColor: '#3A3A47',
@@ -23,6 +24,7 @@ const RuletteStyles = StyleSheet.create({
         padding: 15,
         textAlign: 'center',
         fontWeight: 'bold',
+
 
     },
 

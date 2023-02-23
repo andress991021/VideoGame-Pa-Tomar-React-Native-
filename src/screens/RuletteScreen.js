@@ -1,11 +1,6 @@
 import { Text, View, StyleSheet } from 'react-native'
 import React from 'react'
 
-//for the rulette
-
-import Roulette from 'react-native-roulette';
-
-
 //Components create for the proyect.
 import TextTitle from '../components/Title'
 import TextParragraf from '../components/Text/Parragraf';
@@ -19,24 +14,23 @@ import RuletteStyles from '../assets/Styles/RuletteStyles.js';
 
 
 
-
-
 export default function RuletteScreen(props) {
     const { navigation } = props;
     const goToPage = (routename) => {
         navigation.navigate(routename)
     }
 
+
     return (
         <View style={RuletteStyles.containercss}>
             <View style={RuletteStyles.header}>
 
 
-                <View style={{ alignContent: 'flex-start', }}>
+                <View style={{ justifyContent: 'space-between', }}>
                     <OptionButtom titlename="<" linkdirection={() => goToPage("InstruccionOneScreen")} />
                 </View>
 
-                <View style={{ textaling: 'right', }}>
+                <View style={{ justifyContent: 'flex-end', }}>
                     <OptionButtom titlename="X" linkdirection={() => goToPage("InstruccionOneScreen")} />
                 </View>
 
