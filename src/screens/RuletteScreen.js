@@ -1,12 +1,24 @@
 import { Text, View, StyleSheet } from 'react-native'
 import React from 'react'
+
+//for the rulette
+
+import Roulette from 'react-native-roulette';
+
+
 //Components create for the proyect.
 import TextTitle from '../components/Title'
-
 import TextParragraf from '../components/Text/Parragraf';
 import OptionButtom from '../components/Buttoms/OptionsButtom';
 
-import ImageInstruction from '../components/Images';
+//Styles
+
+import RuletteStyles from '../assets/Styles/RuletteStyles.js';
+
+
+
+
+
 
 
 export default function RuletteScreen(props) {
@@ -15,36 +27,48 @@ export default function RuletteScreen(props) {
         navigation.navigate(routename)
     }
 
-
     return (
-        <View style={styles.containercss}>
+        <View style={RuletteStyles.containercss}>
+            <View style={RuletteStyles.header}>
 
 
-            <View style={styles.icontitle1}>
+                <View style={{ alignContent: 'flex-start', }}>
+                    <OptionButtom titlename="<" linkdirection={() => goToPage("InstruccionOneScreen")} />
+                </View>
 
-                <Text> TItulo </Text>
-
-                <View style={styles.icontitle2}>
+                <View style={{ textaling: 'right', }}>
                     <OptionButtom titlename="X" linkdirection={() => goToPage("InstruccionOneScreen")} />
                 </View>
 
             </View>
 
+            <View style={RuletteStyles.margin_sm}>
 
 
-            <View style={styles.tarjetcss}>
+
+                <Text style={RuletteStyles.logo}> LOGO</Text>
+
+
+            </View>
+
+
+
+            <View /* style={styles.tarjetcss} */>
                 <View style={{ marginTop: 24 }}>
-                    <TextTitle texttitle="Pa Tomar" />
+                    <Text style={{ fontSize: 40, color: 'white', fontWeight: 'bold', textAlign: 'center', }}>Spin</Text>
                 </View>
                 <View >
                     <TextParragraf textparragraf="Click The Wheel" />
                 </View>
+
+
                 <View>
-                    <ImageInstruction fileimage={require('../assets/imgs/ruleta.png')} />
+
                 </View>
 
             </View>
-        </View>
+
+        </View >
     )
 
 
@@ -52,38 +76,3 @@ export default function RuletteScreen(props) {
 
 }
 
-
-const styles = StyleSheet.create({
-    containercss: {
-        flexDirection: 'row',
-
-        flex: 1,
-        backgroundColor: '#2E2E3E',
-        paddingHorizontal: 16,
-        alignItems: 'stretch',
-        justifyContent: 'space-around',
-
-    },
-    icontitle1: {
-
-        backgroundColor: 'yellow',
-
-    },
-    icontitle2: {
-
-
-        backgroundColor: 'red',
-
-    },
-
-    tarjetcss: {
-
-        flexWrap: 'nowrap',
-        backgroundColor: '#222525',
-        paddingHorizontal: 39,
-        marginBottom: 26,
-        borderRadius: 8,
-
-
-    },
-});
