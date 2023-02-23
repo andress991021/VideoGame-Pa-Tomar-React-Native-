@@ -45,7 +45,7 @@ export default function RuletteScreen(props) {
                         onDimiss={() => console.log('close')}
                         onShow={() => console.log('show')}
                         transparent
-                        visible={view}
+                        visible={true}
                     >
 
                         <View
@@ -70,8 +70,8 @@ export default function RuletteScreen(props) {
                                 }}
                             >
 
-                                <OptionButtom titlename="Languaje" linkdirection={() => goToPage("InstruccionOneScreen")} />
-                                <OptionButtom titlename="How to" linkdirection={() => goToPage("InstruccionOneScreen")} />
+                                <OptionButtom titlename="Languaje" />
+                                <OptionButtom titlename="How to" />
                                 <OptionButtom titlename="Close" action={() => { setView(false); }} />
 
 
